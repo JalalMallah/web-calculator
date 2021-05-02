@@ -1,7 +1,9 @@
-let input = document.querySelector('.panel').textContent;
-const container = document.querySelector('.container');
+const $ = document.querySelector.bind(document);
+
+let input = $('.panel').textContent;
+const container = $('.container');
 const divs = document.querySelectorAll('.container div');
-const cursor = document.querySelector('span.cursor');
+const cursor = $('span.cursor');
 
 // Cursor animation
 setInterval(() => {
@@ -14,57 +16,57 @@ divs.forEach(div => {
     // Nums
     if (e.target.classList.contains('number')) {
       input += e.target.textContent;
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Backspace
     if (e.target.classList.contains('backspace')) {
       input = input.slice(0, -1);
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Clear
     if (e.target.classList.contains('clear')) {
       input = '';
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Comma
     if (e.target.classList.contains('comma')) {
       if (!input.includes('.')) {
         input += '.';
-        document.querySelector('.panel').textContent = input;
+        $('.panel').textContent = input;
       }
     }
 
     // Percentage
     if (e.target.classList.contains('percentage')) {
       input += '%';
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Divide
     if (e.target.classList.contains('divide')) {
       input += '/';
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Multiply
     if (e.target.classList.contains('multiply')) {
       input += '*';
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Subtract
     if (e.target.classList.contains('subtract')) {
       input += '-';
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Add
     if (e.target.classList.contains('add')) {
       input += '+';
-      document.querySelector('.panel').textContent = input;
+      $('.panel').textContent = input;
     }
 
     // Equals
@@ -75,7 +77,7 @@ divs.forEach(div => {
         const num2 = parseFloat(input.slice(input.indexOf('/') + 1));
 
         input = num1 / num2;
-        document.querySelector('.panel').textContent = input;
+        $('.panel').textContent = input;
       }
 
       // Multiply
@@ -84,7 +86,7 @@ divs.forEach(div => {
         const num2 = parseFloat(input.slice(input.indexOf('*') + 1));
 
         input = num1 * num2;
-        document.querySelector('.panel').textContent = input;
+        $('.panel').textContent = input;
       }
 
       // Subtract
@@ -93,7 +95,7 @@ divs.forEach(div => {
         const num2 = parseFloat(input.slice(input.indexOf('-') + 1));
 
         input = num1 - num2;
-        document.querySelector('.panel').textContent = input;
+        $('.panel').textContent = input;
       }
 
       // Add
@@ -102,14 +104,14 @@ divs.forEach(div => {
         const num2 = parseFloat(input.slice(input.indexOf('+') + 1));
 
         input = num1 + num2;
-        document.querySelector('.panel').textContent = input;
+        $('.panel').textContent = input;
       }
 
       // Percentage
       if (input.includes('%')) {
         const num = parseFloat(input.slice(0, input.indexOf('%')));
         input = num / 100;
-        document.querySelector('.panel').textContent = input;
+        $('.panel').textContent = input;
       }
     }
   });
