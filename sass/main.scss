@@ -1,13 +1,26 @@
 * {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
   display: flex;
-  height: 100vh;
-  font-family: 'Raleway', sans-serif;
-  font-size: 28px;
-  background-image: url('img/circle-blues.png');
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3rem;
+  background: linear-gradient(
+    121deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(19, 41, 116, 1) 0%,
+    rgba(1, 250, 245, 1) 100%
+  );
   color: #ddd;
 }
 
@@ -15,9 +28,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(7, 1fr);
-
-  /* W połączeniu z display:flex; na body wyśrodkowuje kontener */
-  margin: 20px auto;
   width: 360px;
   height: 640px;
 }
@@ -34,7 +44,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
 }
 
